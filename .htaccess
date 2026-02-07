@@ -1,0 +1,17 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    
+    # If accessing root directory, redirect to public
+    RewriteRule ^$ public/index.php [L]
+    
+    # Redirect everything to public folder if not already there
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ public/$1 [L,QSA]
+</IfModule>
+
+# Set default index files
+DirectoryIndex public/index.php index.php index.html
+
