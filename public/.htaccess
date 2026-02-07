@@ -1,0 +1,29 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+    
+    # Allow static files
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+    
+    # Redirect everything else to index.php
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+# Disable directory browsing
+Options -Indexes
+
+# Set default index
+DirectoryIndex index.php
+
+# PHP settings
+<IfModule mod_php7.c>
+    php_flag display_errors Off
+    php_value max_execution_time 300
+    php_value memory_limit 256M
+</IfModule>
