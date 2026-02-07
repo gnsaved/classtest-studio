@@ -31,6 +31,14 @@ A comprehensive assessment builder platform for teachers and exam administrators
 
 ```
 classtest-studio/
+├── assets/
+    ├── classtest-studioAdminAssessmentResult.png    # AdminScreenshot
+    ├── classtest-studioAdminCreateAssessment.png    # AdminScreenshot
+    ├── classtest-studioAdminDashboard.png           # AdminScreenshot
+    ├── classtest-studioLoginPage.png                # LoginScreenshot
+    ├── classtest-studioUserAssessmentResult.png     # UserScreenshot
+    ├── classtest-studioUserDashboard.png            # UserScreenshot
+│   └── classtest-studioUserSubmitAssessment.png     # UserScreenshot
 ├── config/
 │   └── config.php           # Application configuration
 ├── public/
@@ -90,7 +98,7 @@ http://localhost:8000
 - Password: admin123
 
 **Student Account:**
-- Email: student@classtest.com
+- Email: emma.w@student.edu
 - Password: student123
 
 ## Configuration
